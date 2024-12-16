@@ -2,8 +2,8 @@
 
 ## Módulo IO
 
-- prompt
-- arquivos
+- [ ] prompt
+- [ ] arquivos
 
 ## Módulo Console
 
@@ -11,12 +11,14 @@
 
 ## Módulos de Rede
 
-- dns
-- http
-- https
-- querystring
-- url
+- [ ] dns
+- [ ] http
+- [ ] https
+- [ ] querystring
+- [ ] url
 
 ## Módulo Crypto (hashs)
 
 ## Datas/horários
+
+- [ ] Luxon
