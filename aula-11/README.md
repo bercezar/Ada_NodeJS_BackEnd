@@ -1,7 +1,5 @@
 # Node I
 
----
-
 ## **Módulo IO**
 
 Módulos responsáveis pela entrada e saída de dados no Node.js.
