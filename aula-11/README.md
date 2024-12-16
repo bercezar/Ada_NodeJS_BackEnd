@@ -7,8 +7,6 @@
 
 ## Módulo Console
 
-- (vazio)
-
 ## Env
 
 ## Módulos de Rede
