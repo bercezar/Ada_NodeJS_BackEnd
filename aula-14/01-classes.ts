@@ -1,4 +1,4 @@
-type Produto = {
+export type Produto = {
   nome: string;
   valor: number;
 };
@@ -6,25 +6,25 @@ type Produto = {
 /*
   class Estabelecimento {
     private endereco: string;
-    private tipo: string;
+    private setor: string;
     private produtos: Produto[];
-    constructor(endereco: string, tipo: string, produtos: Produto[]) {
+    constructor(endereco: string, setor: string, produtos: Produto[]) {
       this.endereco = endereco;
-      this.tipo = tipo;
+      this setor = setor;
       this.produtos = produtos;
     }
   }
   */
 
-class Estabelecimento {
+class EstabelecimentoBase {
   // Mais prático a criação da classe
   private _filaDeEspera = 10;
 
   constructor(
     public endereco: string,
-    public tipo: string,
+    public setor: string,
     public produtos: Produto[],
-    filaDeEspera?: number
+    filaDeEspera?: number // Significa que pode ou não ser fornecido ao criar a instância
   ) {
     this.filaDeEspera = filaDeEspera ?? this._filaDeEspera;
   }
@@ -50,7 +50,7 @@ class Estabelecimento {
 }
 
 // Criando um objeto pela classe Estabelecimento
-const padaria2 = new Estabelecimento(
+const padaria2 = new EstabelecimentoBase(
   "Rua y do x, 199 - bloco P",
   "Alimentação",
   [
@@ -62,12 +62,16 @@ const padaria2 = new Estabelecimento(
   14
 );
 
-const padaria3 = new Estabelecimento("Rua do Avião, 121", "Alimentação", []);
+const padaria3 = new EstabelecimentoBase(
+  "Rua do Avião, 121",
+  "Alimentação",
+  []
+);
 
 // Criando de forma simples um objeto
 const padaria = {
   endereco: "Rua x do y, 182 - bloco S",
-  tipo: "Alimentação",
+  setor: "Alimentação",
   produtos: [
     { nome: "pão", valor: 2.99 },
     { nome: "café", valor: 3.9 },
