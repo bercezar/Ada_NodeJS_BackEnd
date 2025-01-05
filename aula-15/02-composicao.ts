@@ -1,8 +1,10 @@
 type Constructor = new (...args: any[]) => {};
 type GConstructor<T = {}> = new (...args: any[]) => T;
 type AnimalProps = GConstructor<{ nome: string; idadeEmMeses: number }>;
+// AnimalProps -> Especialização de GConstructor, exigindo que o construtor retorne um objeto com nome e idadeEmMeses
 
 function MixinAnimal<TBase extends AnimalProps>(superClasse: TBase) {
+  // Mixin ->  Funções que recebem uma classe como entrada e retornam uma nova classe com funcionalidades adicionadas
   return class extends superClasse {
     constructor(...args: any) {
       super(args[0]);
@@ -75,3 +77,13 @@ caoDeGuarda.farejar();
 caoDeGuarda2.farejar();
 
 caoDomestico.comer();
+
+/* 
+-- Herança --
+Representada pela relação entre K9 e Cachorro: 
+          K9 é uma subclasse de Cachorro, o que significa que ela carrega todas as funcionalidades da classe base.
+
+-- Composição --
+Usada com MixinAnimal:
+          MixinAnimal combina funcionalidades de forma modular e flexível. É possível aplicar MixinAnimal a várias classes, sem necessidade de alterar a classe original ou criar subclasses.
+*/
